@@ -45,4 +45,4 @@ Action	Key
 Brake	← Left Arrow
 Gas	→ Right Arrow
 
-<a href="">Live Demo</a>
+<a href="https://kevin-2810.github.io/Hill-Climb-Game/">Live Demo</a>
