@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hill Climb Racing</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrapper">
+  <canvas id="c" width="800" height="480"></canvas>
+
+  <div id="hud">
+    <div class="hud-panel">
+      <div class="hud-item"><span>📍</span><span class="hud-val" id="h-dist">0 m</span></div>
+      <div class="hud-item"><span>⚡</span><span class="hud-val" id="h-spd">0 km/h</span></div>
+    </div>
+    <div class="hud-panel">
+      <div class="hud-item"><span>🪙</span><span class="hud-val" id="h-coins">0</span></div>
+      <div class="hud-item"><span>⏱</span><span class="hud-val" id="h-time">0s</span></div>
+    </div>
+  </div>
+
+  <div id="fuel-wrap">
+    <span id="fuel-label">⛽ Fuel</span>
+    <div id="fuel-track"><div id="fuel-fill"></div></div>
+  </div>
+
+  <div id="controls-bar">
+    <div class="ctrl-hint">← Brake</div>
+    <div class="ctrl-hint">→ Gas</div>
+  </div>
+
+  <div id="warn">⚠ Low Fuel!</div>
+  <div id="flip-warn">🔄 Flipping! — Game Over!</div>
+
+  <div id="touch-controls">
+    <div class="touch-btn" id="btn-brake">◀</div>
+    <div class="touch-btn" id="btn-gas">▶</div>
+  </div>
+
+  <div id="overlay">
+    <div id="overlay-card">
+      <div id="overlay-title">🏔️ Hill Climb Racing</div>
+      <div id="overlay-sub">Pick your vehicle and conquer the hills!</div>
+      <div id="best-badge">🏆 Best: <span id="best-val">0m</span></div>
+
+      <div id="vehicle-grid">
+        <div class="v-card selected" data-v="jeep">
+          <div class="v-emoji">🚙</div><div class="v-name">Jeep</div><div class="v-stat">Balanced</div>
+        </div>
+        <div class="v-card" data-v="truck">
+          <div class="v-emoji">🚛</div><div class="v-name">Truck</div><div class="v-stat">Heavy &amp; Strong</div>
+        </div>
+        <div class="v-card" data-v="bike">
+          <div class="v-emoji">🏍️</div><div class="v-name">Bike</div><div class="v-stat">Light &amp; Fast</div>
+        </div>
+        <div class="v-card" data-v="buggy">
+          <div class="v-emoji">🏎️</div><div class="v-name">Buggy</div><div class="v-stat">High Speed</div>
+        </div>
+        <div class="v-card" data-v="tank">
+          <div class="v-emoji">🚜</div><div class="v-name">Tractor</div><div class="v-stat">Max Grip</div>
+        </div>
+        <div class="v-card" data-v="bus">
+          <div class="v-emoji">🚌</div><div class="v-name">Bus</div><div class="v-stat">Hard Mode</div>
+        </div>
+      </div>
+
+      <div id="diff-row">
+        <button class="diff-btn selected" data-d="easy">Easy</button>
+        <button class="diff-btn" data-d="medium">Medium</button>
+        <button class="diff-btn" data-d="hard">Hard</button>
+      </div>
+
+      <div id="stats-row">
+        <div class="stat-box"><div class="stat-num" id="e-dist">0m</div><div class="stat-lbl">Distance</div></div>
+        <div class="stat-box"><div class="stat-num" id="e-coins">0</div><div class="stat-lbl">Coins</div></div>
+        <div class="stat-box"><div class="stat-num" id="e-time">0s</div><div class="stat-lbl">Time</div></div>
+        <div class="stat-box"><div class="stat-num" id="e-spd">0</div><div class="stat-lbl">Top km/h</div></div>
+      </div>
+
+      <button id="start-btn" onclick="startGame()">Start Game</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
